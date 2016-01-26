@@ -16,5 +16,15 @@
             "email": "srinikumar11@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "autoload":{
+      "psr-4":{
+        "BeeCMS\\SearchBundle\\": ""
+      }
+    },
+    "extra": {
+      "branch-alias": {
+        "dev-master": "master"
+      }
+    },
+    "minimum-stability": "stable"
 }
