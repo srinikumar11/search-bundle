@@ -21,10 +21,5 @@
         "BeeCMS\\SearchBundle\\": ""
       }
     },
-    "extra": {
-      "branch-alias": {
-        "dev-master": "master"
-      }
-    },
     "minimum-stability": "stable"
 }
