@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/beecmssearch/css/search.css') }}" />
+{% endblock %}
+{% block body %}
+    <div id="container" class="container">
+        <div class="row">
+            <h1>Simple Search</h1>
+            <form action="{{ path('search_homepage') }}" method="GET" class="clearfix" id="simple-search" role="form">
+                <div class="form-group">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('beecms_search') }}" />
+                    <div class="col-md-8">
+                        <input class="form-control pull-left" type="text" placeholder="Enter Text" id="beecms-search-input" value="{{ app.request.get('query') }}" name="query" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="btn btn-primary" type="submit" value="Search" id="simple-search-button" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        {% if app.request.get('query') %}
+            <div class="row">
+                <h2>Results: Count <span id="result-count">{{ results | length }}</span></h2>
+                <div>
+                    <ul class="list-group" id="result-list">
+                        {% for result in results %}
+                            <li class="list-group-item">
+                                {{ result.title }}
+                                <ul >
+                                    <li>{{ result.path }}</li>
+                                    <li>{{ result.file_contents | truncate(50) }}</li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li>No results found</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/beecmssearch/js/typeahead.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/beecmssearch/js/handlebars.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/beecmssearch/js/search-typeahead.js') }}"></script>
+{% endblock %}

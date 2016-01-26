@@ -1,0 +1,20 @@
+{
+    "name": "beecms/search-bundle",
+    "description": "Simple file based search, additionally DB indexing is also available.",
+    "type": "symfony-bundle",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Srinivasan Kumar",
+            "email": "srinikumar11@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

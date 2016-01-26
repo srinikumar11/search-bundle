@@ -1,0 +1,17 @@
+search_homepage:
+    path:     /
+    defaults: { _controller: BeeCMSSearchBundle:Default:index }
+
+
+search_autocomplete:
+    path: /autocomplete/search/{query}
+    defaults: { _controller: BeeCMSSearchBundle:Default:autoComplete, query: null }
+    options:
+      expose: true
+
+rest_api:
+    type: rest
+    prefix: /api
+    resource: BeeCMS\SearchBundle\Controller\ApiController
+    options:
+        expose: true

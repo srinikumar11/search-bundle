@@ -1,0 +1,28 @@
+.tt-menu{
+    background: #ffffff;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    font-size: 13px;
+    width: 100%;
+    margin-top: -1px;
+    border-top: 0px;
+
+}
+.tt-menu p{
+    cursor:pointer;
+}
+
+.tt-suggestion .pull-right strong.tt-highlight{
+    font-weight: normal;
+}
+.twitter-typeahead{
+    width: 100%;
+}
+.tt-suggestion.tt-selectable {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+}
+.tt-suggestion.tt-selectable:last-child {
+    border-bottom: 0 solid #ccc;
+}

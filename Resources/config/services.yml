@@ -1,0 +1,23 @@
+parameters:
+    beecms.search.service.class:                        BeeCMS\SearchBundle\Services\SearchService
+    beecms.search.file_search.service.class:            BeeCMS\SearchBundle\Services\FileSearchService
+    beecms.search.file_search_db_index.service.class:   BeeCMS\SearchBundle\Services\FileSearchWithDBIndexService
+
+
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+    beecms.search.file_search.service:
+        class: %beecms.search.file_search.service.class%
+
+    beecms.search.file_search_db_index.service:
+        class: %beecms.search.file_search_db_index.service.class%
+        arguments: ["@doctrine.orm.entity_manager", "@beecms.search.file_search.service"]
+
+
+    beecms.search.service:
+        class: %beecms.search.service.class%
+        arguments: ["@beecms.search.file_search.service"]
