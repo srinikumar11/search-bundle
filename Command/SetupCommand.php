@@ -13,7 +13,6 @@ use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use BeeCMS\SearchBundle\Services\FileSearchService;
 use BeeCMS\SearchBundle\Services\FileSearchWithDBIndexService;
 
 class SetupCommand extends ContainerAwareCommand
