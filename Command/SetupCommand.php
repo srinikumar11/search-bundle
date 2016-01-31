@@ -52,15 +52,8 @@ class SetupCommand extends ContainerAwareCommand
         $kernel->boot();
         $this->_application = new Application($kernel);
         $this->_application->setAutoExit(false);
-//        $this->runConsole("doctrine:database:drop");
-//        $this->runConsole("doctrine:database:create");
-//        $this->runConsole("doctrine:schema:drop", array("--force" => true));
         $this->runConsole("doctrine:schema:update", array("--force" => true));
         $this->index($output);
-//        $output->writeln('<server> [OK] Server running on http://127.0.0.1:8000  </server>');
-//        $this->runConsole("server:run");
-
-
     }
 
     protected function runConsole($command, Array $options = array())
